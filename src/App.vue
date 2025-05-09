@@ -19,12 +19,11 @@
      const section1 = gsap.timeline({
          scrollTrigger: {
              trigger: '#section1',
-             start: 'top top',
+             start: '20% top',
              end: 'bottom top',
              scrub: true,
              pin:true,
              anticipatePin: 1,
-             markers: true
          }
      })
 
@@ -32,31 +31,31 @@
     section1.to(".swipe-in-r",{
          opacity:0,
          x:-100,
-         duration:1,
+         duration:2,
      },"<").to(".swipe-in-l",{
          opacity:0,
          x:100,
-         duration:1,
+         duration:2,
      },"<").to(".swipe-in-u",{
          opacity:0,
          y:-100,
-         duration:1,
+         duration:2,
      },"<").to("#section1 img",{opacity:0,duration:2},"<")
         .to("#section1 h1",{
          opacity:0,
          x:300,
          duration:2
      },"<")
-     .to("#section1 p",{
+     .to("#herop",{
          opacity:0,
          x:-300,
          duration:2
      },"<").to(".fade-out",{
          opacity:0,
-         duration:1
+         duration:2
      },"<").to("#light",{
          opacity:0,
-         duration:1,
+         duration:2,
      },"<")
 
      section1.from("#section2 h2",{
@@ -71,6 +70,13 @@
          duration:4,
          ease:"expo.out"
      },"<")
+     section1.from("#whitediv",{
+         scale:0.4,
+         delay:10,
+         opacity:0,
+         y:100,
+         duration:8
+     })
 
      // Apply stagger and conditional animations to each logo
      gsap.utils.toArray('.logo img').forEach((el, index) => {
@@ -100,7 +106,7 @@
         Smaller Footprint, Bigger Impact
       </h1>
 
-      <p class="mt-5 w-3/5 font-light text-lg" >Our Kubernetes-native system goes beyond exact matches; detecting and compressing similar data for unmatched storage efficiency and lightning-fast performance</p>
+      <p id="herop" class="mt-5 w-3/5 font-light text-lg" >Our Kubernetes-native system goes beyond exact matches; detecting and compressing similar data for unmatched storage efficiency and lightning-fast performance</p>
 
       <div class="fade-out mt-9 flex flex-row justify-center gap-16 items-center">
         <Button >
@@ -137,11 +143,34 @@
       </div>
       <p class="w-[550px] text-sm text-gray-300" >Deploy on your terms, whether you're coding solo, scaling a team, or running enterprise infrastructure. Compatible with all major cloud platforms.</p>
 
+      <div id="whitediv" class=" flex flex-row items-center justify-around mt-32 w-[720px] bg-white rounded-lg h-[150px]" >
+          <span class="gradient-text">
+              <p class="text-4xl" >80%</p>
+              <p class="text-lg ">Global Storage <br/> Reduction</p>
+          </span>
+          <span class="gradient-text">
+              <p class="text-4xl" >80%</p>
+              <p class="text-lg ">Global Storage <br/> Reduction</p>
+          </span>
+
+          <span class="gradient-text">
+              <p class="text-4xl" >80%</p>
+              <p class="text-lg ">Global Storage <br/> Reduction</p>
+          </span>
+
+      </div>
+
     </section>
 
   </main>
 </template>
 
 <style scoped>
-
+ .gradient-text {
+     background: linear-gradient(to right, #FF00BF, #0099FF); /* Pink to Blue */
+     -webkit-background-clip: text; /* Applies gradient to the text */
+     color: transparent; /* Makes the text color transparent */
+     font-weight:300;
+     background-size: 100%; /* Ensure it fits the text */
+ }
 </style>
