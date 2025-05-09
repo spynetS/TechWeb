@@ -6,7 +6,7 @@
 
 
 <template>
-	<div :class="primary ? 'bg-[radial-gradient(circle_at_center,_#ff00bf45,_#000000)] w-[300px] h-[370px]' : 'w-[280px] h-[350px]'" class="small-outline py-3 px-4 bg-gradient-to-t from-black to-[#FFFFFF0A] rounded-xl flex flex-col items-betwenn">
+	<div :class="primary ? 'bg-[radial-gradient(circle_at_center,_#ff00bf45,_#000000)] w-[300px] h-[370px]' : 'w-[280px] h-[350px]'" class="duration-300 hover:-translate-y-1 small-outline py-3 px-4 bg-gradient-to-t from-black to-[#FFFFFF0A] rounded-xl flex flex-col items-betwenn">
 
 		<div class="flex flex-row justify-between">
 			<p>IDK</p>
