@@ -12,5 +12,19 @@ body{
 
 
 .small-outline {
-  box-shadow: 0 0 1px 0 white;
+  box-shadow: 0 0 2px 0 white;
+}
+
+.card {
+  box-shadow: 0 0 2px 0 white;
+  background: linear-gradient(to top, black, #FFFFFF0A);
+  border-radius: 0.75rem; /* which equals 12px */
+}
+
+.card-padding {
+    padding-top: 0.75rem;   /* 12px */
+	padding-bottom: 0.75rem;
+	padding-left: 1rem;     /* 16px */
+	padding-right: 1rem;
+
 }
