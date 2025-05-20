@@ -223,16 +223,19 @@
 
             <div id="review-cards" class="mt-24 flex flex-row text-center justify-center gap-12 w-2/3 " >
                 <ReviewCard
+                    :review="5"
                     description="We integrated the compression system into our CI pipeline and instantly saw a 60% reduction in artifact storage size. Setup was smooth, and support was surprisingly responsive. Highly recommend for any team drowning in redundant data"
                     name="Lena Matthews"
                     title="DevOps Engineer, Oslo"
                 />
                 <ReviewCard
+                    :review="5"
                     description="“As a solo developer, storage costs add up fast. This tool helped me slash my cloud bill without compromising speed or simplicity. The similarity deduplication is next-level — it caught patterns even I didn’t expect”"
                     name="Carlos Nguyen"
                     title="Independent Developer"
                 />
                 <ReviewCard
+                    :review="4"
                     description="“We process terabytes of client data weekly, and this system handled it with ease. Our AWS usage dropped by 48% in the first month alone. The Kubernetes-native design made deployment and scaling seamless”"
                     name="Fatima Al-Bashir "
                     title="CTO, DataCore Analytics"

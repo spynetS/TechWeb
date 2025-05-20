@@ -2,7 +2,8 @@
  defineProps({
      description: String,
      name: String,
-     title: String
+     title: String,
+     review: Number
  });
 </script>
 
@@ -13,12 +14,18 @@
         <p class="text-gray-300 text-xs">{{title}}</p>
 
         <div class="mt-3 flex flex-row items-between">
-            <img src="@/assets/star.svg" alt="star" />
-            <img src="@/assets/star.svg" alt="star" />
-            <img src="@/assets/star.svg" alt="star" />
-            <img src="@/assets/star.svg" alt="star" />
-            <img src="@/assets/star.svg" alt="star" />
-
+            <img
+                v-for="n in review"
+                :key="n"
+                src="@/assets/star.svg"
+                alt="star"
+            />
+            <img
+                v-for="n in (5-review)"
+                :key="n"
+                src="@/assets/gray-star.svg"
+                alt="gray-star"
+            />
         </div>
     </div>
 </template>
