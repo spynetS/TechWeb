@@ -3,6 +3,7 @@
  import Card from "./components/Card.vue"
  import Button from "./components/Button.vue"
  import ReviewCard from "./components/ReviewCard.vue"
+ import SmallPricingCard from "./components/SmallPricingCard.vue"
 
  import { onMounted } from 'vue'
  import gsap from 'gsap'
@@ -114,7 +115,27 @@
              duration:1
          })
      });
+     const section4 = gsap.timeline({
+         scrollTrigger: {
+             trigger: '#pricing',
+             start: 'top top',
+             end: '+=200%',
+             scrub: true,
+             pin:true,
 
+         }
+     }).from("#pricing h3",{
+         opacity:0,
+         duration:1,
+     })
+
+
+    gsap.utils.toArray(".fade-in").forEach((el,index)=>{
+         section4.from(el,{
+             opacity:0,
+             duration:1
+         })
+     });
 
  })
 
@@ -218,7 +239,7 @@
         <div style="height: 200vh;"></div>
 
 
-        <section id="reviews" class="min-h-screen container mx-auto flex flex-col items-center">
+        <section id="reviews" class="h-screen container mx-auto flex flex-col items-center">
             <h3 class="mt-16 text-3xl">Reviews</h3>
 
             <div id="review-cards" class="mt-24 flex flex-row text-center justify-center gap-12 w-2/3 " >
@@ -244,7 +265,51 @@
 
 
         </section>
-        <div style="height: 100vh;"></div>
+        <div style="height: 50vh;"></div>
+        <section id="pricing" class="h-screen w-screen relative flex flex-col items-center">
+            <img id="pricing-background" class="absolute top-0 z-[-2]" src="@/assets/pricing_background.png" alt="``" />
+            <h3 class="mt-10 text-3xl">Pricing</h3>
+
+            <div class="mt-9 w-3/5 grid grid-cols-3 gap-6">
+                <SmallPricingCard
+                    title="Free"
+                    included="1 GB"
+                    overage="0.25"
+                    price="0"
+                    ideal="Testing, evaluation, personal use"
+                />
+                <SmallPricingCard
+                    title="Starter"
+                    included="25 GB"
+                    overage="0.20"
+                    price="29"
+                    ideal="Indie devs, small backups"
+                />
+                <SmallPricingCard
+                    title="Growth"
+                    included="100 GB"
+                    overage="0.15"
+                    price="99"
+                    ideal="Teams, CI/CD pipelines"
+                />
+            </div>
+            <div class="mt-6 w-3/5 grid grid-cols-2 gap-6">
+                <SmallPricingCard
+                    title="Scale"
+                    included="500 GB"
+                    overage="0.10"
+                    price="399"
+                    ideal="Mid-sice orgs, multi-app use"
+                />
+                <SmallPricingCard
+                    :enterprise="true"
+                    title="Enterprice"
+                    included="1 + TB"
+                    ideal="High-volume clients, SaaS vendors"
+                />
+            </div>
+        </section>
+        <div style="height: 200vh;"></div>
 
     </main>
 </template>
