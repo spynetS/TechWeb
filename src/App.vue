@@ -1,6 +1,7 @@
 <script setup>
 
  import Card from "./components/Card.vue"
+ import Demo from "./components/Demo.vue"
  import Button from "./components/Button.vue"
  import ReviewCard from "./components/ReviewCard.vue"
  import SmallPricingCard from "./components/SmallPricingCard.vue"
@@ -208,31 +209,8 @@
             </div>
 
             <h3 class="mt-16 mb-5 text-2xl">Simplified Concept</h3>
-            <div id="demo" class="grid grid-cols-3 grid-rows-2  w-[900px] h-[200px] ">
-                <div class="fade-in mb-5 col-1 flex flex-col justify-between rounded-xl card card-padding py-3 px-4">
-                    <p>Message is: {{ message }}</p>
-                    <input v-model="message" placeholder="edit me" />
-                    <p class="text-xl">Input</p>
-                </div>
+            <Demo />
 
-                <div class="mt-5 col-1 fade-in row-2 flex flex-col justify-between card card-padding">
-                    <span></span>
-                    <p class="text-gray-300 text-5xl">0%</p>
-                    <p class="text-xl">Result</p>
-                </div>
-
-                <div class="row-span-2 fade-in flex items-center">
-                    <img src="@/assets/Pipes.svg" alt="" />
-                </div>
-
-
-                <div class="col-3 flex fade-in flex-col justify-between row-span-2 card card-padding">
-                    <span></span>
-                    <p class="text-gray-300 text-5xl">0%</p>
-                    <p class="text-xl">Database</p>
-                </div>
-
-            </div>
             <p class="text-gray-300 mt-5">This is a simple program to explain how the logic behind our compression method </p>
         </section>
 
